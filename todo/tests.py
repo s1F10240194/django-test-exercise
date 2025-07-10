@@ -26,6 +26,7 @@ class TaskModelTestCase(TestCase):
         task.save()
 
         task = Task.objects.get(pk=task.pk)
+        
         self.assertEqual(task.title, "task2")
         self.assertFalse(task.completed)
         self.assertEqual(task.due_at, None)
