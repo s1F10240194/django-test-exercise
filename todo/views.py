@@ -63,3 +63,4 @@ def delete(request, task_id):
         raise Http404("Task does not exist")
     task.delete()
     return redirect('index')
+
