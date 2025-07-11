@@ -12,7 +12,7 @@ def index(request):
         task = Task(title=request.POST["title"], due_at=make_aware(parse_datetime(request.POST["due_at"])))
         task.save()
 
-    if request.GET.get('orfer') == 'due':
+    if request.GET.get('order') == 'due':
         tasks = Task.objects.order_by('due_at')
     else:
         tasks = Task.objects.order_by('-posted_at')
@@ -34,14 +34,7 @@ def detail(request, task_id):
     }
     return render(request, "todo/detail.html", context)
 
-def exit(request, task_id):
-    task = get_object_or_404(Task, pk=task_id)
-    task.completed = True
-    task.save()
-    return redirect('index')
-
 def update(request, task_id):
-
     try:
         task = Task.objects.get(pk=task_id)
     except Task.DoesNotExist:
@@ -66,3 +59,9 @@ def delete(request, task_id):
     task.delete()
     return redirect('index')
 
+def close(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    if request.method == 'POST':
+        task.completed = True
+        task.save()
+    return redirect('index')

@@ -26,6 +26,11 @@
       </div>
     </form>
     <br>
+
+    <form action="{% url 'close' task.id %}" method="post">
+      {% csrf_token %}
+      <button type="submit">Close</button>
+    </form>
   </body>
 
 </html>
