@@ -60,7 +60,6 @@ def delete(request, task_id):
 
 def close(request, task_id):
     task = get_object_or_404(Task, id=task_id)
-    if request.method == 'POST':
-        task.completed = True
-        task.save()
+    task.completed = True
+    task.save()
     return redirect('index')
