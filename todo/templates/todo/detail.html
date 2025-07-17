@@ -21,6 +21,31 @@
       <li>Status: Not Completed</li>
       {% endif %}
     </ul>
+    
+    <h2>Comments</h2>
+    <form action="{% url 'detail' task.id %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="textInput">Text</label><br>
+        <textarea id="textInput" name="text" rows="3"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    {% if comments %}
+    {% for comment in comments %}
+    <div class="text">
+      <small>[{{ comment.posted_at }}]</small>
+      <div>
+        {{ comment.text | linebreaksbr }}
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No comment.</p>
+    {% endif %}
 
     <div>
       <a href="{% url 'index' %}">Top</a>
