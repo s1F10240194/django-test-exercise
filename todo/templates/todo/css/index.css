@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+}
+
+.title {
+    color: black;
+    text-align: left;
+    font-size: 16px;
+    width: 10%;
+    height: 10px;
+}
+
+.due_at {
+    color: black;
+    text-align: left;
+    font-size: 16px;
+    width: 10%;
+    height: 10px;
+}
+
+.submit {
+    color: black;
+    text-align: left;
+    font-size: 16px;
+    width: 10%;
+    height: 10px;
+}
