@@ -1,0 +1,70 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 40px;
+}
+
+h1 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.text {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-top: 20px;
+  border-left: 5px solid #3498db;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px;
+}
+
+ul {
+  padding-left: 20px;
+}

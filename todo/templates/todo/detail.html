@@ -21,6 +21,12 @@
       <li>Status: Not Completed</li>
       {% endif %}
     </ul>
+
+    <p>💕 いいね数: {{ task.likes }}</p>
+    <form action="{% url 'detail' task.id %}" method="post">
+      {% csrf_token %}
+      <button type="submit" name="like">いいね</button>
+    </form>
     
     <h2>Comments</h2>
     <form action="{% url 'detail' task.id %}" method="post">

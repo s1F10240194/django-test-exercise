@@ -10,6 +10,7 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
     posted_at = models.DateTimeField(default=timezone.now)
     due_at = models.DateTimeField(null=True, blank=True)
+    likes = models.IntegerField(default=0)
 
     def is_overdue(self, dt):
         if self.due_at is None:
@@ -24,4 +25,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment on '{self.task.title}' at {self.created_at.strftime('%Y-%m-%d %H:%M')}"
-
