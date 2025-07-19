@@ -30,8 +30,12 @@ def detail(request, task_id):
         raise Http404("Task does not exist")
 
     if request.method == 'POST':
-        comment = Comment(task=task, text=request.POST['text'])
-        comment.save()
+        if 'like' in request.POST:
+            task.likes += 1
+            task.save()
+        elif 'text' in request.POST:
+            comment = Comment(task=task, text=request.POST['text'])
+            comment.save()
 
     context = {
         "task": task,
