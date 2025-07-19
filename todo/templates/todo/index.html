@@ -15,15 +15,15 @@
     <form action="{% url 'index' %}" method="post">
       {% csrf_token %}
       <div class = title>
-        <label for="titleInput">Title</label><br>
+        <label for="titleInput">タイトル</label><br>
         <input id="titleInput" name="title" type="text" placeholder="Input title">
       </div>
       <div class = due_at>
-        <label for="dueInput">Due at:</label><br>
+        <label for="dueInput">作成日</label><br>
         <input id="dueInput" name="due_at" type="datetime-local">
       </div>
       <div class = submit>
-        <button type="submit">Submit</button>
+        <button type="submit">提出</button>
       </div>
     </form>
     <br>
